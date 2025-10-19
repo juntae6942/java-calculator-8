@@ -1,11 +1,11 @@
 package calculator;
 
-import camp.nextstep.edu.missionutils.test.NsTest;
-import org.junit.jupiter.api.Test;
-
 import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
+import camp.nextstep.edu.missionutils.test.NsTest;
+import org.junit.jupiter.api.Test;
 
 class ApplicationTest extends NsTest {
     @Test
@@ -19,8 +19,8 @@ class ApplicationTest extends NsTest {
     @Test
     void 예외_테스트() {
         assertSimpleTest(() ->
-            assertThatThrownBy(() -> runException("-1,2,3"))
-                .isInstanceOf(IllegalArgumentException.class)
+                assertThatThrownBy(() -> runException("-1,2,3"))
+                        .isInstanceOf(IllegalArgumentException.class)
         );
     }
 
@@ -37,6 +37,14 @@ class ApplicationTest extends NsTest {
         assertSimpleTest(() -> {
             run("//'\\n//|\\n3'6|7");
             assertThat(output()).contains("결과 : 16");
+        });
+    }
+
+    @Test
+    void 커스텀_구분자_숫자_사용() {
+        assertSimpleTest(() -> {
+            run("//5\\n3545");
+            assertThat(output()).contains("결과 : 7");
         });
     }
 

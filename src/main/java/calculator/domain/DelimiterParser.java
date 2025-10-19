@@ -1,16 +1,15 @@
 package calculator.domain;
 
+import calculator.common.NumberValidator;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import calculator.common.NumberValidator;
 
 /**
- * 문자열에서 구분자를 파싱하고 숫자 목록을 추출하는 클래스.
- * 기본 구분자(','와 ':')와 커스텀 구분자를 지원합니다.
+ * 문자열에서 구분자를 파싱하고 숫자 목록을 추출하는 클래스. 기본 구분자(','와 ':')와 커스텀 구분자를 지원합니다.
  */
 public class DelimiterParser {
 
